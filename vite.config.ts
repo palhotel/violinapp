@@ -5,6 +5,8 @@ import react from '@vitejs/plugin-react';
 export default defineConfig(({ mode }) => {
     const env = loadEnv(mode, '.', '');
     return {
+      // 支持通过 VITE_BASE（或在 workflow 中注入的 VITE_BASE）设置 base 路径
+      base: env.VITE_BASE || '/',
       server: {
         port: 3000,
         host: '0.0.0.0',

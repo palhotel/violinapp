@@ -9,7 +9,7 @@ interface HomeViewProps {
 
 const HomeView: React.FC<HomeViewProps> = ({ onSelectSong }) => {
   return (
-    <div className="pb-20 bg-gray-50 min-h-screen">
+    <div className="h-full overflow-y-auto bg-gray-50 pb-20 no-scrollbar">
       {/* Header */}
       <header className="sticky top-0 bg-white/90 backdrop-blur-md z-40 px-4 py-3 shadow-sm flex items-center justify-between">
         <div className="flex items-end gap-3">
@@ -80,7 +80,7 @@ const HomeView: React.FC<HomeViewProps> = ({ onSelectSong }) => {
         </div>
       </section>
 
-      <section className="mt-6">
+      <section className="mt-6 mb-10">
         <div className="px-4 py-2 flex items-center justify-between bg-gradient-to-r from-purple-50 to-white">
            <h2 className="font-bold text-slate-800 text-lg flex items-center gap-2">
              <span className="w-1 h-5 bg-purple-500 rounded-full"></span>

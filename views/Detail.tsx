@@ -10,18 +10,18 @@ interface DetailViewProps {
 
 const DetailView: React.FC<DetailViewProps> = ({ song, onBack, onPlay }) => {
   return (
-    <div className="bg-white min-h-screen pb-safe-area flex flex-col">
+    <div className="bg-white h-full flex flex-col">
       {/* Navbar */}
-      <div className="sticky top-0 bg-white z-10 px-4 py-3 flex items-center gap-4 border-b border-gray-100">
+      <div className="sticky top-0 bg-white z-10 px-4 py-3 flex items-center gap-4 border-b border-gray-100 shrink-0">
         <button onClick={onBack} className="p-1 -ml-2 rounded-full active:bg-gray-100">
           <ChevronLeft size={28} className="text-slate-700" />
         </button>
         <h1 className="text-lg font-bold text-slate-800">曲谱详情</h1>
       </div>
 
-      <div className="flex-1 overflow-y-auto p-4">
+      <div className="flex-1 overflow-y-auto p-4 pb-20 no-scrollbar">
         {/* Hero Image */}
-        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl mb-6">
+        <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl mb-6 shrink-0">
            <img src={song.coverUrl} alt={song.title} className="w-full h-full object-cover" />
            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
            <div className="absolute bottom-4 left-4 text-white">
@@ -53,7 +53,7 @@ const DetailView: React.FC<DetailViewProps> = ({ song, onBack, onPlay }) => {
         </div>
 
         {/* Action Buttons */}
-        <div className="grid grid-cols-2 gap-3 mb-20">
+        <div className="grid grid-cols-2 gap-3 mb-10">
            <button className="flex items-center justify-center gap-2 py-3 rounded-lg bg-green-100 text-green-700 font-bold text-sm">
               <Music2 size={16} /> 免费五线谱
            </button>
